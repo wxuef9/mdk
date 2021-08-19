@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 1000px;
+            background: linear-gradient(to bottom right,#000,#2073c2 60%, #dff6ff);
+            overflow: hidden;
+        }
+        span{
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0.4px 0.4px 0.4px 0px #fff;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+                var screenW = document.documentElement.clientWidth;
+                var screenH = document.documentElement.clientHeight;
+                var colorArr = ['#fff','skyblue','orange','pink','red'];
+                console.log(screenW);
+               for(var i=0;i<800;i++){
+                var span = document.createElement('span');
+                var width  = Math.random() * 5;
+                var colorIndex = parseInt(Math.random() * 5);
+                var x = parseInt(Math.random() * screenW);
+                var y = parseInt(Math.random() * screenH);
+                span.style.width = parseInt(width) + 'px';
+                span.style.height = parseInt(width) + 'px';
+                span.style.background = colorArr[colorIndex];
+                span.style.left = x + 'px';
+                span.style.top = y + 'px';
+                document.body.appendChild(span)
+                }
+        }
+    </script>
+</body>
+
+</html>
